@@ -12,6 +12,7 @@
 	$data      = mysqli_fetch_array($login,MYSQLI_BOTH);
 	$username  = $data['username'];
 	$level     = $data['level'];
+	$keterangan = $data['keterangan'];
 	if ($jlhrecord > 0){
 
 		if($level==0) {
@@ -19,6 +20,7 @@
 			session_start();
 			$_SESSION['username']  = $username;
 			$_SESSION['level']     = $level;
+			$_SESSION['keterangan']     = $keterangan;
 			$_SESSION['id']        = session_id();
 			
 			header('location: halaman_admin.php');
@@ -44,12 +46,32 @@
 
 		elseif ($level==3) {
 		 	// jika Username dan password ada didalam database daftarkan session
-		 	session_start();
-		 	$_SESSION['username']  = $username;
-		 	$_SESSION['level']     = $level;
-		 	$_SESSION['id']        = session_id();
+		 	if ($keterangan=='a'){
+		 		session_start();
+		 		$_SESSION['username']  = $username;
+		 		$_SESSION['level']     = $level;
+		 		$_SESSION['id']        = session_id();
 		 	
-		 	header('location: halaman_wali_kelas_8.php');
+		 		header('location: halaman_wali_kelas_8.php');
+		 	}
+		 	if ($keterangan=='b'){
+		 		session_start();
+		 		$_SESSION['username']  = $username;
+		 		$_SESSION['level']     = $level;
+		 		$_SESSION['id']        = session_id();
+		 		
+		 		echo "Berhasil login sebagai walikelas 8b";
+		 		// header('location: halaman_wali_kelas_8.php');
+		 	}
+		 	if ($keterangan=='c'){
+		 		session_start();
+		 		$_SESSION['username']  = $username;
+		 		$_SESSION['level']     = $level;
+		 		$_SESSION['id']        = session_id();
+		 		
+		 		echo "Berhasil login sebagai walikelas 8c";
+		 		// header('location: halaman_wali_kelas_8.php');
+		 	}
 		}
 
 		elseif ($level==4) {

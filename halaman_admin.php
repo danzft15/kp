@@ -104,7 +104,7 @@
 
 							<span class="menu-text">
 								Data Master
-								<span class="badge badge-primary">2</span>
+								<span class="badge badge-primary">3</span>
 							</span>
 
 							<b class="arrow fa fa-angle-down"></b>
@@ -126,6 +126,15 @@
 								<a href="?page=pelajaran">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Data Mata Pelajaran
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="active">
+								<a href="?page=manajemenguru">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Manajemen Guru
 								</a>
 
 								<b class="arrow"></b>
@@ -233,6 +242,9 @@
 					}
 					elseif ($page == "inputnilai") {
 						include "input_nilai.php";
+					}
+					elseif ($page == "manajemenguru") {
+						include "manajemen_guru.php";
 					}
 			?>
 			</div><!-- /.main-content -->
